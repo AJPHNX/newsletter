@@ -1,0 +1,173 @@
+//@include normalize();
+$black: #000000;
+$white: #ffffff;
+$content-bg:#eaeae8;
+$l_img-bg:#fffcf7;
+$r_form-bg:#fffcf7;
+$formBorder:#c9c7c5;
+$contentH:560px;
+$contentW:920px;
+$l_imgH: 970px;
+// $l_imgW: 645px;
+$l_imgW: $contentW * .4;
+$r_contentH: $contentH;
+$r_contentW: $contentW * .6;
+$h1_fontSize:42px;
+$h2_fontSize:20px;
+$h1_fontFam:"Futura";
+$h2_fontFam:"Futura";
+$buttonFontFam: "Futura";
+$buttonFontSize:30px;
+$h1_width:($contentW -40)px;
+$h2_width:300px;
+$uni_padd: 10px;
+$emailW: 80%;
+$emailH: 45px;
+
+//
+// @mixin transform($scale:20px) {
+//   -webkit-transform:$scale;
+//   -moz-transform:$scale;
+//   -ms-transform:$scale;
+//   -o-transform:$scale;
+// }
+//.wrapper{
+.wrapper{
+  height:$contentH;
+  width:$contentW;
+  //position: absolute;
+  //top:0px;
+  //left:0px;
+  //border: solid $black;
+  margin: 0px auto;
+  }
+#content{
+  position: absolute;
+  top: 0px;
+  background-color: $content-bg;
+  border: dotted $black;
+  height: $contentH;
+  width: $contentW;
+  margin: 0px auto;
+  overflow: hidden;
+  padding-bottom: 0px;
+}
+  //border: 800px 550px;
+  #left-image {
+    background-color: $l_img-bg;
+    position: relative;
+    //top: 0px;
+    left: 0px;
+    height: $contentH;
+    width: $l_imgW;
+    //padding: $uni_padd;
+    padding-top: $uni_padd;
+    padding-left: $uni_padd;
+    overflow: hidden;
+    }
+    .crop {
+      width: $l_imgW;
+      height: $contentH;
+      overflow: hidden;
+      img{
+        width: 1630px;
+        height: auto;//1100px;
+        //2878 × 1800
+      }
+    }
+    #imgPos{margin: -235px 0 0 -375px;}
+    .Xbox img{
+      position:absolute;
+      width:30px;
+      height:30px;
+      top: $uni_padd;
+      right:10px;
+      z-index:2;}
+
+    #right-form{
+      position: absolute;
+      top:0px;
+      right:0px;
+      background-color: $r_form-bg;
+      height: $contentH - 10;
+      width: $r_contentW;
+      text-align: center;
+      padding: $uni_padd;
+      overflow: hidden;
+      //@include transform();
+      //h1,h2 {width:$contentW -40px;}
+      h1{
+        position: relative;
+        font-style: bold;
+        font:$h1_fontSize $h1_fontFam,Trebuchet MS,Arial,sans-serif;
+        text-transform: uppercase;
+        width:$h1_width;
+        margin:0px auto;
+        padding-top: 55px;
+      }
+      h2{
+        padding-top: 10px;
+        position: relative;
+        font: $h2_fontSize $h2_fontFam,Trebuchet MS,Arial,sans-serif;
+        width:$h2_width;
+        margin:0px auto;
+
+      }
+      //.getEmail {width:$h1_width;}
+      //input [type=text]{
+      .getEmail {padding-top: 10px;}
+      #emailAdd label{
+        width: 100%;
+        display:block;
+        //border:2px solid;
+        //border-color: $formBorder;
+      }
+      #emailAdd{
+        border:1px solid $formBorder;
+        border-style: solid;
+        //width:100%;
+        width:$emailW;
+        height:$emailH;
+        margin: 15px;
+      }
+      :focus{background-color:$l_img-bg; }
+      ::-webkit-input-placeholder {padding-top: 10px;}
+      :-moz-placeholder {padding-top: 10px;}
+      :-ms-input-placeholder {padding-top: 10px;}
+      ::placeholder {
+        //position: relative;
+        color:$formBorder;
+        font: $h2_fontSize+5 $h2_fontFam,Trebuchet MS,Arial,sans-serif;
+        padding-top: 0px;
+        text-align: left center;
+        font-style: normal;
+        //line-height:$emailH;
+        //vertical-align: middle;
+      }
+      #sendBtn{
+        width:$emailW;
+        height:$emailH;
+        background-color: $black;
+        color:$white;
+        font:$buttonFontSize $buttonFontFam,Trebuchet MS,Arial,sans-serif;
+        text-transform: uppercase;
+        border: none;
+      }
+      .getEmail #noThnx{
+        width:$emailW;
+        position: relative;
+        text-align: right;
+        font: $h2_fontSize $h2_fontFam,Trebuchet MS,Arial,sans-serif;
+        top:0px;
+        color:$formBorder;
+      .social{
+        position: absolute;
+        bottom:10px;
+        padding-top:100px;
+      }
+      .social  img{
+        height:31px;
+        width:31px;
+      }
+      }
+    }
