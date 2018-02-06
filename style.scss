@@ -1,24 +1,30 @@
 //@include normalize();
 $black: #000000;
 $white: #ffffff;
-$content-bg:#eaeae8;
+$html-bg: #757270 ;
+$content-bg:#fffcf7;//#eaeae8;
 $l_img-bg:#fffcf7;
 $r_form-bg:#fffcf7;
 $formBorder:#c9c7c5;
+$inputColor:#757270;
 $contentH:560px;
 $contentW:920px;
+$r_formH:540px;
 $l_imgH: 970px;
 // $l_imgW: 645px;
 $l_imgW: $contentW * .4;
-$r_contentH: $contentH;
+$cropH: 540px;
+$r_contentH: 550px;
 $r_contentW: $contentW * .6;
 $h1_fontSize:42px;
 $h2_fontSize:20px;
+$pH_fontSize: 24px;
+$pHolder_pad: 10px;
 $h1_fontFam:"Futura";
 $h2_fontFam:"Futura";
 $buttonFontFam: "Futura";
 $buttonFontSize:30px;
-$h1_width:($contentW -40)px;
+$h1_width:880;//($contentW -40)px;
 $h2_width:300px;
 $uni_padd: 10px;
 $emailW: 80%;
@@ -32,14 +38,16 @@ $emailH: 45px;
 //   -o-transform:$scale;
 // }
 //.wrapper{
+body{background-color:$html-bg;}
 .wrapper{
   height:$contentH;
   width:$contentW;
-  //position: absolute;
+  position: absolute;
   //top:0px;
   //left:0px;
   //border: solid $black;
   margin: 0px auto;
+  background-color: $content-bg;
   }
 #content{
   position: absolute;
@@ -58,7 +66,7 @@ $emailH: 45px;
     position: relative;
     //top: 0px;
     left: 0px;
-    height: $contentH;
+    height: $r_contentH;
     width: $l_imgW;
     //padding: $uni_padd;
     padding-top: $uni_padd;
@@ -67,7 +75,7 @@ $emailH: 45px;
     }
     .crop {
       width: $l_imgW;
-      height: $contentH;
+      height: $cropH;
       overflow: hidden;
       img{
         width: 1630px;
@@ -76,20 +84,23 @@ $emailH: 45px;
       }
     }
     #imgPos{margin: -235px 0 0 -375px;}
-    .Xbox img{
+    .xBox img{
       position:absolute;
       width:30px;
       height:30px;
       top: $uni_padd;
       right:10px;
-      z-index:2;}
+      z-index:2;
+
+
+      }
 
     #right-form{
       position: absolute;
       top:0px;
       right:0px;
       background-color: $r_form-bg;
-      height: $contentH - 10;
+      height: $r_formH ;
       width: $r_contentW;
       text-align: center;
       padding: $uni_padd;
@@ -125,26 +136,32 @@ $emailH: 45px;
       #emailAdd{
         border:1px solid $formBorder;
         border-style: solid;
+        font: $h2_fontSize $h2_fontFam,Trebuchet MS,Arial,sans-serif;
+        color: $inputColor;
         //width:100%;
         width:$emailW;
         height:$emailH;
         margin: 15px;
       }
-      :focus{background-color:$l_img-bg; }
-      ::-webkit-input-placeholder {padding-top: 10px;}
-      :-moz-placeholder {padding-top: 10px;}
-      :-ms-input-placeholder {padding-top: 10px;}
+
       ::placeholder {
         //position: relative;
+        line-height: 30px;
         color:$formBorder;
-        font: $h2_fontSize+5 $h2_fontFam,Trebuchet MS,Arial,sans-serif;
-        padding-top: 0px;
-        text-align: left center;
+        font: $pH_fontSize $h2_fontFam,Trebuchet MS,Arial,sans-serif;
+        padding-top: $pHolder_pad;
+        text-align: left;
         font-style: normal;
         //line-height:$emailH;
         //vertical-align: middle;
       }
+      // input:focus{background-color:$l_img-bg; }
+      // input::-webkit-input-placeholder {line-height: $pH_fontSize; padding-top: $pHolder_pad;}
+      // input:-moz-placeholder {line-height: $pH_fontSize;padding-top: $pHolder_pad;}
+      // input:-ms-input-placeholder {line-height: $pH_fontSize;padding-top: $pHolder_pad;}
+
       #sendBtn{
+        margin:5px 0 10px 0;
         width:$emailW;
         height:$emailH;
         background-color: $black;
@@ -160,14 +177,20 @@ $emailH: 45px;
         font: $h2_fontSize $h2_fontFam,Trebuchet MS,Arial,sans-serif;
         top:0px;
         color:$formBorder;
-      .social{
-        position: absolute;
-        bottom:10px;
-        padding-top:100px;
+        margin:0px auto;
+
       }
-      .social  img{
+      .social #social{
+        background-color: $black;
+        position: absolute;
+        margin-top:50px;
+        width:$emailW;
+        height:300px;
+        bottom:10px;
+        //padding-top:100px;
+      }
+      .social  #social{
         height:31px;
         width:31px;
-      }
       }
     }

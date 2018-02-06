@@ -1,13 +1,19 @@
+body {
+  background-color: #757270;
+}
+
 .wrapper {
   height: 560px;
   width: 920px;
+  position: absolute;
   margin: 0px auto;
+  background-color: #fffcf7;
 }
 
 #content {
   position: absolute;
   top: 0px;
-  background-color: #eaeae8;
+  background-color: #fffcf7;
   border: dotted #000000;
   height: 560px;
   width: 920px;
@@ -20,7 +26,7 @@
   background-color: #fffcf7;
   position: relative;
   left: 0px;
-  height: 560px;
+  height: 550px;
   width: 368px;
   padding-top: 10px;
   padding-left: 10px;
@@ -29,7 +35,7 @@
 
 .crop {
   width: 368px;
-  height: 560px;
+  height: 540px;
   overflow: hidden;
 }
 
@@ -42,12 +48,7 @@
   margin: -235px 0 0 -375px;
 }
 
-#test-div {
-  position: relative;
-  right: 0px;
-}
-
-.Xbox img {
+.xBox img {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -61,10 +62,10 @@
   top: 0px;
   right: 0px;
   background-color: #fffcf7;
-  height: 550px;
+  height: 540px;
   width: 552px;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   overflow: hidden;
 }
 
@@ -73,7 +74,7 @@
   font-style: bold;
   font: 42px "Futura", Trebuchet MS, Arial, sans-serif;
   text-transform: uppercase;
-  width: 920px -40 px;
+  width: 880;
   margin: 0px auto;
   padding-top: 55px;
 }
@@ -98,36 +99,24 @@
 #right-form #emailAdd {
   border: 1px solid #c9c7c5;
   border-style: solid;
+  font: 20px "Futura", Trebuchet MS, Arial, sans-serif;
+  color: #757270;
   width: 80%;
   height: 45px;
   margin: 15px;
 }
 
-#right-form :focus {
-  background-color: #fffcf7;
-}
-
-#right-form ::-webkit-input-placeholder {
-  padding-top: 10px;
-}
-
-#right-form :-moz-placeholder {
-  padding-top: 10px;
-}
-
-#right-form :-ms-input-placeholder {
-  padding-top: 10px;
-}
-
 #right-form ::placeholder {
+  line-height: 30px;
   color: #c9c7c5;
-  font: 25px "Futura", Trebuchet MS, Arial, sans-serif;
-  padding-top: 0px;
-  text-align: left center;
+  font: 24px "Futura", Trebuchet MS, Arial, sans-serif;
+  padding-top: 10px;
+  text-align: left;
   font-style: normal;
 }
 
 #right-form #sendBtn {
+  margin: 5px 0 10px 0;
   width: 80%;
   height: 45px;
   background-color: #000000;
@@ -144,15 +133,19 @@
   font: 20px "Futura", Trebuchet MS, Arial, sans-serif;
   top: 0px;
   color: #c9c7c5;
+  margin: 0px auto;
 }
 
-#right-form .getEmail #noThnx .social {
+#right-form .social #social {
+  background-color: #000000;
   position: absolute;
+  margin-top: 50px;
+  width: 80%;
+  height: 300px;
   bottom: 10px;
-  padding-top: 100px;
 }
 
-#right-form .getEmail #noThnx .social img {
+#right-form .social #social {
   height: 31px;
   width: 31px;
 }
