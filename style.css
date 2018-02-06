@@ -1,5 +1,41 @@
+@media screen and (max-width: 919px) {
+  #whole {
+    width: 100%;
+  }
+  #content {
+    width: 100%;
+  }
+  #left-image {
+    width: 40%;
+  }
+  #right-form {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #whole {
+    width: 100%;
+  }
+  #content {
+    width: 100%;
+  }
+  #left-image {
+    width: 40%;
+  }
+  #right-form {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #whole {
+    width: 320px;
+  }
+}
+
 body {
-  background-color: #757270;
+  background-color: #1c1a19;
 }
 
 .wrapper {
@@ -8,13 +44,58 @@ body {
   position: absolute;
   margin: 0px auto;
   background-color: #fffcf7;
+  z-index: 1;
+}
+
+.closeButton {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: none;
+  top: 10px;
+  right: 10px;
+  z-index: 4;
+}
+
+.xBox img {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+}
+
+.popWindow {
+  visibility: hidden;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.popWindow .popUpText {
+  position: absolute;
+  background-color: #c9c7c5;
+  color: #000000;
+  border-radius: 20px;
+  height: 80px;
+  width: 150px;
+  left: -450px;
+  bottom: 50px;
+  text-align: center;
+  font: 14 "Futura", Trebuchet MS, Arial, sans-serif;
+  margin: 0 auto;
+  z-index: 4;
+}
+
+#laterPopUp {
+  padding-top: 25px;
 }
 
 #content {
   position: absolute;
   top: 0px;
   background-color: #fffcf7;
-  border: dotted #000000;
   height: 560px;
   width: 920px;
   margin: 0px auto;
@@ -46,15 +127,6 @@ body {
 
 #imgPos {
   margin: -235px 0 0 -375px;
-}
-
-.xBox img {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 10px;
-  right: 10px;
-  z-index: 2;
 }
 
 #right-form {
@@ -111,6 +183,7 @@ body {
   color: #c9c7c5;
   font: 24px "Futura", Trebuchet MS, Arial, sans-serif;
   padding-top: 10px;
+  padding-left: 10px;
   text-align: left;
   font-style: normal;
 }
@@ -136,16 +209,34 @@ body {
   margin: 0px auto;
 }
 
-#right-form .social #social {
-  background-color: #000000;
-  position: absolute;
-  margin-top: 50px;
-  width: 80%;
-  height: 300px;
-  bottom: 10px;
+#right-form .noThnxButton {
+  top: 0px;
+  display: inline-block;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
 }
 
-#right-form .social #social {
+#right-form #socialLinks {
+  position: relative;
+  width: 80%;
+  height: 40px;
+  bottom: 0px;
+  padding-top: 100px;
+  margin: 0 auto;
+}
+
+#right-form #socialLinks img {
   height: 31px;
   width: 31px;
+}
+
+.show {
+  visibility: visible;
+}
+
+.dontShow {
+  visibility: hidden;
 }

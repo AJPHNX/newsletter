@@ -2,9 +2,11 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-      <div class="wrapper">
+      //
+      <div class="wrapper" id="whole">
         <div id="content">
           <div id="left-image">
             <div class="crop">
@@ -15,7 +17,7 @@
           </div>
           <div id="right-form">
             <div class="xBox">
-              <img src="img/X_icon.png" alt="Close">
+              <button onclick="windowClose()" class="closeButton"><img src="img/X_icon.png" alt="Close"></button>
             </div>
             <h1>Get the worlds best travel Newsletter</h1>
             <h2>Find out about new destinations, trips and deals first.</h2>
@@ -24,14 +26,38 @@
                 <input type="email" id="emailAdd" placeholder="Email"><br>
               </lable>
               <input type="submit" value="subscribe" id ="sendBtn">
-              <p id="noThnx">no thanks</p>
+              <button onclick="noThnxPop()" class="noThnxButton" id="noThnx">no thanks</button>
+              <!-- <p id="noThnx">no thanks</p> -->
+              <div onclick="closePop" class='popWindow' id="popUp">
+                <span class="popUpText" id="laterPopUp">26 26 26 <br>and what and what <br>26</span>
+              </div>
             </form>
-            <div class="social" id="social">
+            <div class="social" id="socialLinks">
               <img src="img/Fb_icon.png" alt="FB">
               <img src="img/Insta_icon.png" alt="IG">
               <img src="img/Twit_icon.png" alt="TW">
             </div>
           </div>
+          <script type="text/Javascript">
+            function windowClose() {
+              var x = document.getElementById("whole");
+              if (x.style.display === "none") {
+                  x.style.display = "block";
+              } else {
+                  x.style.display = "none";
+              }
+            }
+            function noThnxPop() {
+              var popupVar = document.getElementById("popUp");
+              popupVar.classList.toggle("show");
+              //windowClose();
+            }
+            function closePop() {
+              var popupVar2 = document.getElementById("popUp");
+              popupVar2.classList.toggle("dontShow");
+              windowClose();
+            }
+          </script>
 
       </div>
     </div>

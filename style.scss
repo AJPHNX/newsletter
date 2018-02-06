@@ -1,8 +1,9 @@
 //@include normalize();
 $black: #000000;
 $white: #ffffff;
-$html-bg: #757270 ;
+$html-bg: #1c1a19 ;
 $content-bg:#fffcf7;//#eaeae8;
+$popUp-bg:#c9c7c5;
 $l_img-bg:#fffcf7;
 $r_form-bg:#fffcf7;
 $formBorder:#c9c7c5;
@@ -30,6 +31,21 @@ $uni_padd: 10px;
 $emailW: 80%;
 $emailH: 45px;
 
+@media screen and (max-width:919px){
+  #whole{width:100%;}
+  #content{width:100%;}
+  #left-image{width:40%;}
+  #right-form{width:60%;}
+  }
+@media screen and (max-width:640px){
+  #whole{width:100%;}
+  #content{width:100%;}
+  #left-image{width:40%;}
+  #right-form{width:60%;}
+  }
+@media screen and (max-width:320px){
+  #whole{width:320px;}
+  }
 //
 // @mixin transform($scale:20px) {
 //   -webkit-transform:$scale;
@@ -38,37 +54,109 @@ $emailH: 45px;
 //   -o-transform:$scale;
 // }
 //.wrapper{
-body{background-color:$html-bg;}
+body{background-color:$html-bg;}//background-image:url("img/newsletter.jpg");}
 .wrapper{
   height:$contentH;
   width:$contentW;
   position: absolute;
-  //top:0px;
-  //left:0px;
-  //border: solid $black;
   margin: 0px auto;
   background-color: $content-bg;
+  z-index:1;
   }
+.closeButton{
+    position:absolute;
+    width:30px;
+    height:30px;
+    border: none;
+    top: $uni_padd;
+    right:10px;
+    z-index:4;
+  }
+  .xBox img{
+    position:absolute;
+    width:30px;
+    height:30px;
+    top: 0px;//$uni_padd;
+    right:0px;
+    z-index:2;
+    }
+ .popWindow {
+   visibility: hidden;
+   position: relative;
+   display: inline-block;
+   //z-index:4;
+   cursor: pointer;
+   }
+.popWindow .popUpText{
+  position: absolute;
+  background-color:$popUp-bg;
+  color:$black;
+  border-radius: 20px;
+  height:80px;
+  width:150px;
+  left:-450px;
+  bottom:50px;
+  text-align: center;
+  font: 14 $h2_fontFam,Trebuchet MS,Arial,sans-serif;
+  margin:0 auto;
+  z-index:4;
+  //overflow: hidden;
+  }
+  #laterPopUp{padding-top: 25px;}
+  // .popWindow #laterPopUp{
+  //   margin:0 auto;
+  //   padding-top: 0px;
+  // }
+  // .popWindow .popuptext::after {
+  //     content: "";
+  //     position: absolute;
+  //     //top: 100%;
+  //     //left: 50%;
+  //     //margin-left: -5px;
+  //     //border-width: 5px;
+  //     border-style: solid;
+  //     border-color: #555 transparent transparent transparent;
+  // }
+ //.show {visibility: visible;}
+  // -webkit-animation: fadeIn 1s;
+  // animation: fadeIn 1s;
+  //}
+  // @-webkit-keyframes fadeIn{
+  //     from {opacity: 0;}
+  //     to {opacity: 1;}
+  // }
+  // @keyframes fadeIn{
+  //     from {opacity: 0;}
+  //     to {opacity:1 ;}
+  // }
+ //.dontShow {visibility: hidden;}
+   // -webkit-animation: fadeOut 1s;
+   // animation: fadeOut 1s;
+  // }
+  // @-webkit-keyframes fadeOut{
+  //     from {opacity: 1;}
+  //     to {opacity: 0;}
+  // }
+  // @keyframes fadeOut{
+  //     from {opacity: 1;}
+  //     to {opacity: 0;}
+  //}
 #content{
   position: absolute;
   top: 0px;
   background-color: $content-bg;
-  border: dotted $black;
   height: $contentH;
   width: $contentW;
   margin: 0px auto;
   overflow: hidden;
   padding-bottom: 0px;
-}
-  //border: 800px 550px;
+  }
   #left-image {
     background-color: $l_img-bg;
     position: relative;
-    //top: 0px;
     left: 0px;
     height: $r_contentH;
     width: $l_imgW;
-    //padding: $uni_padd;
     padding-top: $uni_padd;
     padding-left: $uni_padd;
     overflow: hidden;
@@ -79,22 +167,11 @@ body{background-color:$html-bg;}
       overflow: hidden;
       img{
         width: 1630px;
-        height: auto;//1100px;
+        height: auto;
         //2878 × 1800
       }
     }
     #imgPos{margin: -235px 0 0 -375px;}
-    .xBox img{
-      position:absolute;
-      width:30px;
-      height:30px;
-      top: $uni_padd;
-      right:10px;
-      z-index:2;
-
-
-      }
-
     #right-form{
       position: absolute;
       top:0px;
@@ -105,8 +182,6 @@ body{background-color:$html-bg;}
       text-align: center;
       padding: $uni_padd;
       overflow: hidden;
-      //@include transform();
-      //h1,h2 {width:$contentW -40px;}
       h1{
         position: relative;
         font-style: bold;
@@ -122,44 +197,34 @@ body{background-color:$html-bg;}
         font: $h2_fontSize $h2_fontFam,Trebuchet MS,Arial,sans-serif;
         width:$h2_width;
         margin:0px auto;
-
       }
-      //.getEmail {width:$h1_width;}
-      //input [type=text]{
       .getEmail {padding-top: 10px;}
       #emailAdd label{
         width: 100%;
         display:block;
-        //border:2px solid;
-        //border-color: $formBorder;
       }
       #emailAdd{
         border:1px solid $formBorder;
         border-style: solid;
         font: $h2_fontSize $h2_fontFam,Trebuchet MS,Arial,sans-serif;
         color: $inputColor;
-        //width:100%;
         width:$emailW;
         height:$emailH;
         margin: 15px;
       }
-
       ::placeholder {
-        //position: relative;
         line-height: 30px;
         color:$formBorder;
         font: $pH_fontSize $h2_fontFam,Trebuchet MS,Arial,sans-serif;
         padding-top: $pHolder_pad;
+        padding-left:10px;
         text-align: left;
         font-style: normal;
-        //line-height:$emailH;
-        //vertical-align: middle;
       }
-      // input:focus{background-color:$l_img-bg; }
-      // input::-webkit-input-placeholder {line-height: $pH_fontSize; padding-top: $pHolder_pad;}
-      // input:-moz-placeholder {line-height: $pH_fontSize;padding-top: $pHolder_pad;}
-      // input:-ms-input-placeholder {line-height: $pH_fontSize;padding-top: $pHolder_pad;}
-
+       // input:focus{background-color:$l_img-bg; }
+       // input::-webkit-input-placeholder {line-height: $pH_fontSize; padding-top: $pHolder_pad;}
+       // input:-moz-placeholder {line-height: $pH_fontSize;padding-top: $pHolder_pad;}
+       // input:-ms-input-placeholder {line-height: $pH_fontSize;padding-top: $pHolder_pad;}
       #sendBtn{
         margin:5px 0 10px 0;
         width:$emailW;
@@ -178,19 +243,39 @@ body{background-color:$html-bg;}
         top:0px;
         color:$formBorder;
         margin:0px auto;
+      }
+      // .closeButton{ ///Just to look at
+      //     position:absolute;
+      //     width:30px;
+      //     height:30px;
+      //     border: none;
+      //     top: $uni_padd;
+      //     right:10px;
+      //     z-index:3;
+      //   }
+        .noThnxButton{
+          top:0px;
+          display: inline-block;
+          cursor:pointer;
+          background: none;
+          border: none;
+          padding: 0;
+          outline: none;
+        }
 
-      }
-      .social #social{
-        background-color: $black;
-        position: absolute;
-        margin-top:50px;
+      #socialLinks{
+        //background-color: $black;
+        position: relative;
         width:$emailW;
-        height:300px;
-        bottom:10px;
-        //padding-top:100px;
+        height:40px;
+        bottom:0px;
+        padding-top:100px;
+        margin: 0 auto;
       }
-      .social  #social{
+       #socialLinks img{
         height:31px;
         width:31px;
       }
     }
+    .show {visibility: visible;}
+    .dontShow {visibility: hidden;}
