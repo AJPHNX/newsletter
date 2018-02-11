@@ -1,0 +1,326 @@
+body {
+  background-color: #1c1a19;
+}
+
+.wrapper {
+  height: 560px;
+  width: 920px;
+  position: absolute;
+  margin: 0px auto;
+  background-color: #fffefc;
+  z-index: 1;
+}
+
+.closeButton {
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  border: none;
+  top: 10px;
+  right: 10px;
+  z-index: 4;
+}
+
+.xBox img {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  top: 0px;
+  right: 10px;
+  z-index: 2;
+}
+
+.popWindow {
+  visibility: hidden;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.popWindow .popUpText {
+  position: absolute;
+  background-color: #c9c7c5;
+  color: #000000;
+  border-radius: 20px;
+  height: 80px;
+  width: 150px;
+  left: -450px;
+  bottom: 50px;
+  text-align: center;
+  font: 14px "helvetica", sans-serif;
+  margin: 0 auto;
+  z-index: 4;
+}
+
+#laterPopUp {
+  padding-top: 25px;
+}
+
+#content {
+  position: absolute;
+  top: 0px;
+  background-color: #fffefc;
+  height: 560px;
+  width: 920px;
+  margin: 0px auto;
+  overflow: hidden;
+  padding-bottom: 0px;
+}
+
+#left-frame {
+  background-color: #fffcf7;
+  position: relative;
+  left: 0px;
+  height: 550px -10px;
+  width: 400px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
+.crop {
+  min-width: 380px;
+  width: 100%;
+  max-height: 100%;
+}
+
+.crop img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#right-frame {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #fffcf7;
+  height: 540px;
+  max-width: 100%;
+  text-align: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#right-frame h1 {
+  position: relative;
+  font-style: bold;
+  font: 35px "helvetica neue", sans-serif;
+  text-transform: uppercase;
+  width: 500px;
+  margin: 0px auto;
+  padding-top: 60px;
+  font-weight: bold;
+}
+
+#right-frame h2 {
+  padding-top: 10px;
+  position: relative;
+  font: 20px "helvetica", sans-serif;
+  font-style: normal;
+  letter-spacing: .5px;
+  line-height: 1.6;
+  width: 350px;
+  margin: 0px auto;
+}
+
+#right-frame .getEmail {
+  padding-top: 40px;
+}
+
+#right-frame #emailAdd label {
+  width: 100%;
+  display: block;
+}
+
+#right-frame #textHandler {
+  poisition: relative;
+  width: 500px;
+  margin: 0 auto;
+}
+
+#right-frame #emailAdd {
+  border: 1px solid #c9c7c5;
+  border-style: solid;
+  font: 22px "helvetica", sans-serif;
+  color: #757270;
+  width: 80%;
+  height: 60px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+#right-frame ::placeholder {
+  color: #c9c7c5;
+  font: 24px "helvetica", sans-serif;
+  font-stlye: normal;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  font-style: normal;
+}
+
+#right-frame ::placeholder-shown {
+  line-height: 30px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+#right-frame #sendBtn {
+  margin: 5px 0 10px 0;
+  width: 80%;
+  height: 50px;
+  background-color: #000000;
+  color: #ffffff;
+  font: 22px "helvetica neue", sans-serif;
+  text-transform: uppercase;
+  border: none;
+}
+
+#right-frame .getEmail #noThnx {
+  width: 80%;
+  position: relative;
+  text-align: right;
+  font: 20px "helvetica", sans-serif;
+  top: 0px;
+  color: #c9c7c5;
+  margin: 0px auto;
+}
+
+#right-frame .noThnxButton {
+  top: 0px;
+  display: inline-block;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+#right-frame #socialLinks {
+  position: relative;
+  width: 80%;
+  height: 40px;
+  bottom: 0px;
+  padding-top: 50px;
+  margin: 0 auto;
+}
+
+#right-frame #socialLinks img {
+  height: 40px;
+  width: 40px;
+}
+
+.show {
+  visibility: visible;
+  -moz-visibility: visible;
+}
+
+.bgChange {
+  background-color: #c9c7c5;
+}
+
+.dontShow {
+  visibility: hidden;
+  -moz-visibility: hidden;
+}
+
+@media screen and (max-width: 919px) {
+  #whole {
+    width: 100%;
+    height: auto;
+  }
+  #content {
+    width: 100%;
+    height: auto;
+  }
+  .left {
+    width: 100%;
+    height: 100%;
+  }
+  .right {
+    width: 100%;
+    height: 100%;
+  }
+  #left-image {
+    width: 40%;
+    height: auto;
+  }
+  #right-form {
+    width: 60%;
+    height: auto;
+  }
+  #textHandler {
+    width: 60%;
+  }
+  #right-form h1 {
+    width: 60%;
+  }
+  #right-form h2 {
+    width: 60%;
+  }
+  #crop {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #whole {
+    width: 100%;
+    height: auto;
+  }
+  #content {
+    width: 100%;
+    height: auto;
+  }
+  .left {
+    width: 100%;
+    height: 100%;
+  }
+  .right {
+    width: 100%;
+    height: 100%;
+  }
+  #left-image {
+    width: 40%;
+    height: auto;
+  }
+  #right-form {
+    width: 60%;
+    height: auto;
+  }
+  #right-form h1 {
+    width: 60%;
+  }
+  #right-form h2 {
+    width: 60%;
+  }
+  #textHandler {
+    width: 60%;
+  }
+  #crop {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #whole {
+    width: 320px;
+    height: auto;
+  }
+  .left {
+    width: 100%;
+    height: 100%;
+  }
+  .right {
+    width: 100%;
+    height: 100%;
+  }
+  #crop {
+    width: auto;
+  }
+}
+
+/* ----------- iPhone 4 and 4S ----------- */
+/* Portrait and Landscape */

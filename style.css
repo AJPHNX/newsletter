@@ -1,37 +1,6 @@
-@media screen and (max-width: 919px) {
-  #whole {
-    width: 100%;
-  }
-  #content {
-    width: 100%;
-  }
-  #left-image {
-    width: 40%;
-  }
-  #right-form {
-    width: 60%;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  #whole {
-    width: 100%;
-  }
-  #content {
-    width: 100%;
-  }
-  #left-image {
-    width: 40%;
-  }
-  #right-form {
-    width: 60%;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  #whole {
-    width: 320px;
-  }
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -39,31 +8,211 @@ body {
 }
 
 .wrapper {
-  height: 560px;
-  width: 920px;
-  position: absolute;
   margin: 0px auto;
-  background-color: #fffcf7;
-  z-index: 1;
+  padding: 1.4%;
+}
+
+#whole {
+  position: relative;
+  background-color: #fffefc;
+  min-width: 400px;
+  min-height: 250px;
+  max-width: 920px;
+  max-height: 560px;
+  overflow: hidden;
+}
+
+#content {
+  display: block;
+  background-color: #fffefc;
+  position: relative;
+  top: 0px;
+  padding-top: 0px;
+  margin: 0 auto;
+  min-width: 400px;
+  min-height: 250px;
+  max-width: 920px;
+  max-height: 560px;
+  overflow: hidden;
+}
+
+.left {
+  position: absolute;
+}
+
+#left-image {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  max-width: 40%;
+  max-height: 100%;
+}
+
+#crop {
+  width: 100%;
+  max-height: 100%;
+}
+
+#crop img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding-left: 10%;
+  margin: 0px auto;
+}
+
+#right-frame {
+  display: block;
+  top: 0px;
+  right: 0px;
+  max-width: 60%;
+  max-height: 100%;
+  padding-right: 2%;
+  overflow: hidden;
 }
 
 .closeButton {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 39px;
+  height: 39px;
   border: none;
-  top: 10px;
-  right: 10px;
+  top: 0px;
+  right: 0px;
   z-index: 4;
 }
 
+#xBox {
+  width: 40px;
+  height: 40px;
+}
+
 .xBox img {
-  position: absolute;
-  width: 30px;
-  height: 30px;
+  position: relative;
+  width: 40px;
+  height: 40px;
   top: 0px;
   right: 0px;
   z-index: 2;
+}
+
+#textHandler {
+  poisition: relative;
+  align: left;
+  width: 60%;
+  padding-top: 0%;
+  padding-left: 5%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  position: relative;
+  font-style: bold;
+  font: 35px "helvetica neue", sans-serif;
+  text-transform: uppercase;
+  width: 100%;
+  padding-top: 20%;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+}
+
+h2 {
+  position: relative;
+  padding-top: 10px;
+  font: 20px "helvetica", sans-serif;
+  font-style: normal;
+  letter-spacing: .5px;
+  line-height: 1.6;
+  width: 80%;
+  margin: 0px auto;
+  text-align: center;
+}
+
+::placeholder {
+  line-height: 30px;
+  color: #c9c7c5;
+  font: 20px "helvetica", sans-serif;
+  font-stlye: normal;
+  padding-left: 10px;
+  padding-top: 5px;
+  text-align: left;
+  font-style: normal;
+}
+
+::-moz-placeholder {
+  line-height: 50px;
+  text-indent: 10px;
+  padding-left: 20px;
+}
+
+#emailAdd {
+  position: relative;
+  border: 1px solid #c9c7c5;
+  border-style: solid;
+  font: 22px "helvetica", sans-serif;
+  color: #757270;
+  width: 85%;
+  height: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#emailAdd label {
+  display: block;
+  border: 1px solid #c9c7c5;
+  border-style: solid;
+  font: 22px "helvetica", sans-serif;
+  color: #757270;
+  width: 100%;
+  height: 50px;
+}
+
+#field_buttons {
+  padding-left: 5%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#sendBtn {
+  width: 85%;
+  height: 50px;
+  background-color: #000000;
+  color: #ffffff;
+  font: 22px "helvetica neue", sans-serif;
+  text-transform: uppercase;
+  border: none;
+}
+
+#getEmail {
+  position: relative;
+  top: 0px;
+  right: 0px;
+  padding-left: 15%;
+  padding-top: 1%;
+}
+
+.getEmail #noThnx {
+  position: relative;
+  width: 85%;
+  text-align: right;
+  font: 20px "helvetica", sans-serif;
+  bottom: 0px;
+  color: #c9c7c5;
+  margin: 0px auto;
+}
+
+.noThnxButton {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding-top: 2%;
+  outline: none;
 }
 
 .popWindow {
@@ -83,160 +232,267 @@ body {
   left: -450px;
   bottom: 50px;
   text-align: center;
-  font: 14 "Futura", Trebuchet MS, Arial, sans-serif;
+  font: 14px "helvetica", sans-serif;
   margin: 0 auto;
   z-index: 4;
 }
 
-#laterPopUp {
-  padding-top: 25px;
-}
-
-#content {
+#scrollPopUp {
   position: absolute;
-  top: 0px;
-  background-color: #fffcf7;
-  height: 560px;
-  width: 920px;
-  margin: 0px auto;
-  overflow: hidden;
-  padding-bottom: 0px;
-}
-
-#left-image {
-  background-color: #fffcf7;
-  position: relative;
-  left: 0px;
-  height: 550px;
-  width: 368px;
-  padding-top: 10px;
-  padding-left: 10px;
-  overflow: hidden;
-}
-
-.crop {
-  width: 368px;
-  height: 540px;
-  overflow: hidden;
-}
-
-.crop img {
-  width: 1630px;
-  height: auto;
-}
-
-#imgPos {
-  margin: -235px 0 0 -375px;
-}
-
-#right-form {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  background-color: #fffcf7;
-  height: 540px;
-  width: 552px;
+  background-color: #c9c7c5;
+  top: 5%;
+  left: 50%;
+  border-radius: 10px;
   text-align: center;
-  padding: 10px;
-  overflow: hidden;
+  font: 14px "helvetica", sans-serif;
+  visibility: hidden;
+  opacity: .75;
+  height: 30px;
+  width: 100px;
 }
 
-#right-form h1 {
-  position: relative;
-  font-style: bold;
-  font: 42px "Futura", Trebuchet MS, Arial, sans-serif;
-  text-transform: uppercase;
-  width: 880;
-  margin: 0px auto;
-  padding-top: 55px;
-}
-
-#right-form h2 {
-  padding-top: 10px;
-  position: relative;
-  font: 20px "Futura", Trebuchet MS, Arial, sans-serif;
-  width: 300px;
-  margin: 0px auto;
-}
-
-#right-form .getEmail {
-  padding-top: 10px;
-}
-
-#right-form #emailAdd label {
-  width: 100%;
+#scrollText {
   display: block;
-}
-
-#right-form #emailAdd {
-  border: 1px solid #c9c7c5;
-  border-style: solid;
-  font: 20px "Futura", Trebuchet MS, Arial, sans-serif;
-  color: #757270;
-  width: 80%;
-  height: 45px;
-  margin: 15px;
-}
-
-#right-form ::placeholder {
-  line-height: 30px;
-  color: #c9c7c5;
-  font: 24px "Futura", Trebuchet MS, Arial, sans-serif;
-  padding-top: 10px;
-  padding-left: 10px;
-  text-align: left;
-  font-style: normal;
-}
-
-#right-form #sendBtn {
-  margin: 5px 0 10px 0;
-  width: 80%;
-  height: 45px;
-  background-color: #000000;
-  color: #ffffff;
-  font: 30px "Futura", Trebuchet MS, Arial, sans-serif;
-  text-transform: uppercase;
-  border: none;
-}
-
-#right-form .getEmail #noThnx {
-  width: 80%;
   position: relative;
-  text-align: right;
-  font: 20px "Futura", Trebuchet MS, Arial, sans-serif;
-  top: 0px;
-  color: #c9c7c5;
-  margin: 0px auto;
+  padding-top: 5.5%;
 }
 
-#right-form .noThnxButton {
-  top: 0px;
-  display: inline-block;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  outline: none;
-}
-
-#right-form #socialLinks {
+#socialLinks {
   position: relative;
-  width: 80%;
+  align: center;
+  width: 100%;
   height: 40px;
   bottom: 0px;
-  padding-top: 100px;
+  padding-top: 10%;
+  padding-left: 5%;
   margin: 0 auto;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
 }
 
-#right-form #socialLinks img {
-  height: 31px;
-  width: 31px;
+#socialLinks img {
+  height: 40px;
+  width: 40px;
 }
 
-.show {
-  visibility: visible;
+@media screen and (max-width: 1200px) {
+  #whole {
+    width: 100%;
+    height: 100%;
+  }
+  #content {
+    width: 100%;
+    height: 100%;
+  }
+  #left-image {
+    width: 40%;
+    height: 100%;
+  }
+  #right-frame {
+    width: 60%;
+    height: 100%;
+  }
+  #textHandler {
+    width: 60%;
+  }
+  #scrollPopUp {
+    visibility: visible;
+  }
 }
 
-.dontShow {
-  visibility: hidden;
+@media screen and (max-width: 1024px) {
+  #whole {
+    width: 100%;
+    height: 100%;
+  }
+  #content {
+    width: 100%;
+    height: 100%;
+  }
+  #left-image {
+    width: 40%;
+    height: 100%;
+  }
+  #right-frame {
+    width: 60%;
+    height: 100%;
+  }
+  #textHandler {
+    width: 60%;
+  }
+  #scrollPopUp {
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #whole {
+    width: 100%;
+    height: 100%;
+  }
+  #content {
+    width: 100%;
+    height: 100%;
+  }
+  #left-image {
+    width: 40%;
+    height: 100%;
+  }
+  #right-frame {
+    width: 60%;
+    height: 100%;
+  }
+  #textHandler {
+    width: 60%;
+  }
+  #scrollPopUp {
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #whole {
+    width: 100%;
+    height: 100%;
+  }
+  #content {
+    width: 100%;
+    height: 100%;
+  }
+  #left-image {
+    width: 40%;
+    height: 100%;
+  }
+  #right-frame {
+    width: 60%;
+    height: 100%;
+    overflow-y: auto;
+  }
+  #textHandler {
+    width: 60%;
+  }
+  #scrollPopUp {
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #whole {
+    width: 100%;
+    height: auto;
+  }
+  #content {
+    width: 100%;
+    height: auto;
+  }
+  #left-image {
+    width: 40%;
+    height: auto;
+  }
+  #right-frame {
+    width: 60%;
+    height: auto;
+    overflow-y: auto;
+  }
+  #textHandler {
+    width: 60%;
+  }
+  #textHandler h1 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+  }
+  #textHandler #scrollPopUp {
+    visibility: visible;
+  }
+  #crop {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  #whole {
+    width: 100%;
+    height: 100%;
+  }
+  #content {
+    width: 100%;
+    height: 100%;
+  }
+  #left-image {
+    width: 40%;
+    height: 100%;
+  }
+  #right-frame {
+    width: 60%;
+    height: 100%;
+    overflow-y: auto;
+  }
+  #textHandler {
+    width: 60%;
+  }
+  #textHandler h1 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+  }
+  #scrollPopUp {
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #whole {
+    width: 100%;
+    height: 100%;
+  }
+  #content {
+    width: 100%;
+    height: 100%;
+  }
+  #left-image {
+    width: 40%;
+    height: 100%;
+  }
+  #right-frame {
+    width: 60%;
+    height: 100%;
+    overflow-y: auto;
+  }
+  #textHandler {
+    width: 60%;
+  }
+  #textHandler h1 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+  }
+  #textHandler #scrollPopUp {
+    visibility: visible;
+  }
 }

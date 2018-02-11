@@ -1,281 +1,424 @@
-//@include normalize();
+//----Document colors
 $black: #000000;
 $white: #ffffff;
-$html-bg: #1c1a19 ;
-$content-bg:#fffcf7;//#eaeae8;
-$popUp-bg:#c9c7c5;
-$l_img-bg:#fffcf7;
-$r_form-bg:#fffcf7;
-$formBorder:#c9c7c5;
-$inputColor:#757270;
-$contentH:560px;
-$contentW:920px;
-$r_formH:540px;
-$l_imgH: 970px;
-// $l_imgW: 645px;
-$l_imgW: $contentW * .4;
-$cropH: 540px;
-$r_contentH: 550px;
-$r_contentW: $contentW * .6;
-$h1_fontSize:42px;
-$h2_fontSize:20px;
-$pH_fontSize: 24px;
+$html-bg: #1c1a19;
+$content-bg: #fffefc;
+$popUp-bg: #c9c7c5;
+$formBorder: #c9c7c5;
+$inputColor: #757270;
+//----Test colors
+$test_color: #7c6d66;
+$l_img-bg: #fffcf7;
+$r_form-bg: #fffcf7;
+//----Card dimensions
+$minWrapperW: 400px;
+$minWrapperH: 250px;
+$maxWrapperW: 920px;
+$maxWrapperH: 560px;
+$wrapperH: 60%;
+$wrapperW: 70%;
+//----Content dimensions
+$contentH: 95%;
+$contentW: 95%;
+//----Frame dimensions
+$r_contentH: 100%;
+$r_contentW: 60%;
+$l_contentH: 100%;
+$l_contentW: 40%;//$r_contentW *.80;//90%;
+//----Element dimensions
+$l_imgH: 100%;
+$l_imgW: 100%;
+$textHandlerW: 100px;
+$h1_width: 100%;
+$h2_width: 80%;
+$emailW: 85%;
+$emailH: 50px;
+//----Spacing tools
+$uni_padd: 1.4%;
+$wrap_paddW: .7%;
 $pHolder_pad: 10px;
-$h1_fontFam:"Futura";
-$h2_fontFam:"Futura";
-$buttonFontFam: "Futura";
-$buttonFontSize:30px;
-$h1_width:880;//($contentW -40)px;
-$h2_width:300px;
-$uni_padd: 10px;
-$emailW: 80%;
-$emailH: 45px;
+//----Font families
+$h1_fontFam: "helvetica neue";
+$h2_fontFam: "helvetica"; //neue";
+$buttonFontFam: "helvetica neue";
+//----Font sizes
+$h1_fontSize: 35px;//225%;
+$h2_fontSize:20px;
+$pH_fontSize: 20px;
+$emailFontSize: 22px;
+$buttonFontSize: 22px;
 
-@media screen and (max-width:919px){
-  #whole{width:100%;}
-  #content{width:100%;}
-  #left-image{width:40%;}
-  #right-form{width:60%;}
-  }
-@media screen and (max-width:640px){
-  #whole{width:100%;}
-  #content{width:100%;}
-  #left-image{width:40%;}
-  #right-form{width:60%;}
-  }
-@media screen and (max-width:320px){
-  #whole{width:320px;}
-  }
-//
-// @mixin transform($scale:20px) {
-//   -webkit-transform:$scale;
-//   -moz-transform:$scale;
-//   -ms-transform:$scale;
-//   -o-transform:$scale;
-// }
-//.wrapper{
-body{background-color:$html-bg;}//background-image:url("img/newsletter.jpg");}
+//----General ////////////////
+*{margin: 0px; padding: 0px;}
+body{background-color:$html-bg;}//$html-bg;}
+//----Wrapper ////////////////
 .wrapper{
-  height:$contentH;
-  width:$contentW;
-  position: absolute;
   margin: 0px auto;
+  padding: $uni_padd;
+  // display: inline-flex;
+  // -webkit-display: flex;
+  // flex-direction: row ltr;
+  // -webkit-direction: row ltr;
+}
+#whole{
+  position: relative;
   background-color: $content-bg;
-  z-index:1;
-  }
-.closeButton{
-    position:absolute;
-    width:30px;
-    height:30px;
-    border: none;
-    top: $uni_padd;
-    right:10px;
-    z-index:4;
-  }
-  .xBox img{
-    position:absolute;
-    width:30px;
-    height:30px;
-    top: 0px;//$uni_padd;
-    right:0px;
-    z-index:2;
-    }
- .popWindow {
-   visibility: hidden;
-   position: relative;
-   display: inline-block;
-   //z-index:4;
-   cursor: pointer;
-   }
-.popWindow .popUpText{
-  position: absolute;
-  background-color:$popUp-bg;
-  color:$black;
-  border-radius: 20px;
-  height:80px;
-  width:150px;
-  left:-450px;
-  bottom:50px;
-  text-align: center;
-  font: 14 $h2_fontFam,Trebuchet MS,Arial,sans-serif;
-  margin:0 auto;
-  z-index:4;
-  //overflow: hidden;
-  }
-  #laterPopUp{padding-top: 25px;}
-  // .popWindow #laterPopUp{
-  //   margin:0 auto;
-  //   padding-top: 0px;
-  // }
-  // .popWindow .popuptext::after {
-  //     content: "";
-  //     position: absolute;
-  //     //top: 100%;
-  //     //left: 50%;
-  //     //margin-left: -5px;
-  //     //border-width: 5px;
-  //     border-style: solid;
-  //     border-color: #555 transparent transparent transparent;
-  // }
- //.show {visibility: visible;}
-  // -webkit-animation: fadeIn 1s;
-  // animation: fadeIn 1s;
-  //}
-  // @-webkit-keyframes fadeIn{
-  //     from {opacity: 0;}
-  //     to {opacity: 1;}
-  // }
-  // @keyframes fadeIn{
-  //     from {opacity: 0;}
-  //     to {opacity:1 ;}
-  // }
- //.dontShow {visibility: hidden;}
-   // -webkit-animation: fadeOut 1s;
-   // animation: fadeOut 1s;
-  // }
-  // @-webkit-keyframes fadeOut{
-  //     from {opacity: 1;}
-  //     to {opacity: 0;}
-  // }
-  // @keyframes fadeOut{
-  //     from {opacity: 1;}
-  //     to {opacity: 0;}
-  //}
+  min-width:$minWrapperW;
+  min-height:$minWrapperH;
+  max-width:$maxWrapperW;
+  max-height:$maxWrapperH;
+  overflow: hidden;
+
+}
+//----Content ////////////////
+.content{
+  //padding: $uni_padd;
+}
 #content{
+  display: block;
+  background-color: $content-bg;//#900;//
+  position: relative;
+  top: 0px;
+  padding-top: 0px;
+  margin: 0 auto;
+  min-width:$minWrapperW;//$wrapperW
+  min-height:$minWrapperH;//$wrapperH
+  max-width:$maxWrapperW;
+  max-height:$maxWrapperH;
+  overflow: hidden;
+  // display: inline-flex;
+  // -webkit-display: flex;
+  // flex-direction: row ltr;
+  // -webkit-direction: row ltr;
+}
+//----Left Frame ////////////////
+.left{
+  position: absolute;
+}
+#left-image{
+  position: relative;
+  top: 0px;
+  left:0px;
+  max-width:$l_contentW;
+  max-height:$l_contentH;
+}
+#crop {
+  width: $l_imgW;
+  max-height: 100%;
+  img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+//----Right Frame ////////////////
+.right{
   position: absolute;
   top: 0px;
-  background-color: $content-bg;
-  height: $contentH;
-  width: $contentW;
+  right: 0px;
+  padding-left: 10%;
   margin: 0px auto;
+}
+#right-frame{
+  display:block;
+  top: 0px;
+  right: 0px;
+  max-width: $r_contentW;
+  max-height: $r_contentH;
+  padding-right: 2%;
   overflow: hidden;
-  padding-bottom: 0px;
   }
-  #left-image {
-    background-color: $l_img-bg;
-    position: relative;
-    left: 0px;
-    height: $r_contentH;
-    width: $l_imgW;
-    padding-top: $uni_padd;
-    padding-left: $uni_padd;
-    overflow: hidden;
-    }
-    .crop {
-      width: $l_imgW;
-      height: $cropH;
-      overflow: hidden;
-      img{
-        width: 1630px;
-        height: auto;
-        //2878 × 1800
-      }
-    }
-    #imgPos{margin: -235px 0 0 -375px;}
-    #right-form{
-      position: absolute;
-      top:0px;
+//----CLose Button ////////////////
+  .closeButton{
+      position:absolute;
+      width:39px;
+      height:39px;
+      border: none;
+      top: 0px;
       right:0px;
-      background-color: $r_form-bg;
-      height: $r_formH ;
-      width: $r_contentW;
-      text-align: center;
-      padding: $uni_padd;
-      overflow: hidden;
-      h1{
-        position: relative;
-        font-style: bold;
-        font:$h1_fontSize $h1_fontFam,Trebuchet MS,Arial,sans-serif;
-        text-transform: uppercase;
-        width:$h1_width;
-        margin:0px auto;
-        padding-top: 55px;
+      z-index:4;
+    }
+    #xBox{
+      width:40px;
+      height:40px;}
+    .xBox img{
+      position: relative;//absolute;
+      width:40px;
+      height:40px;
+      top: 0px;//$uni_padd;
+      right: 0px;
+      z-index:2;
       }
-      h2{
-        padding-top: 10px;
-        position: relative;
-        font: $h2_fontSize $h2_fontFam,Trebuchet MS,Arial,sans-serif;
-        width:$h2_width;
-        margin:0px auto;
-      }
-      .getEmail {padding-top: 10px;}
-      #emailAdd label{
-        width: 100%;
-        display:block;
-      }
+//----Text Handling ////////////////
+  #textHandler{
+    poisition: relative;
+    align: left;
+    width: $r_contentW;
+    padding-top: 0%;
+    padding-left: 5%;
+    margin: 0 auto;
+    width:$h1_width;
+  }
+//----H1 Text ////////////////
+  h1{
+    position: relative;
+    font-style: bold;
+    font: $h1_fontSize $h1_fontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
+    text-transform: uppercase;
+    width:$h1_width;
+    padding-top: 20%;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+  }
+//----H2 Text ////////////////
+  h2{
+    position: relative;
+    padding-top: 10px;
+    font: $h2_fontSize $h2_fontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
+    font-style: normal;
+    letter-spacing: .5px;
+    line-height: 1.6;
+    width:$h2_width;
+    margin:0px auto;
+    text-align: center;
+  }
+//----Place Holder ////////////////
+  ::placeholder {
+    line-height: 30px;
+    color:$formBorder;
+    font: $pH_fontSize $h2_fontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
+    font-stlye: normal;
+    padding-left:10px;
+    padding-top: 5px;
+    text-align: left;
+    font-style: normal;
+    //text-indent: 10px;
+  }
+  //::placeholder-shown{line-height: 30px;padding-left:10px;padding-top: 20px;}//$pHolder_pad;}
+  ::-moz-placeholder {line-height: 50px; text-indent: 10px; padding-left: 20px;}
+//----Email Input Form/Button ////////////////
       #emailAdd{
+        position: relative;
         border:1px solid $formBorder;
         border-style: solid;
-        font: $h2_fontSize $h2_fontFam,Trebuchet MS,Arial,sans-serif;
+        font: $emailFontSize $h2_fontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
         color: $inputColor;
         width:$emailW;
         height:$emailH;
-        margin: 15px;
+        margin-top: 15px;
+        margin-bottom: 15px;
       }
-      ::placeholder {
-        line-height: 30px;
-        color:$formBorder;
-        font: $pH_fontSize $h2_fontFam,Trebuchet MS,Arial,sans-serif;
-        padding-top: $pHolder_pad;
-        padding-left:10px;
-        text-align: left;
-        font-style: normal;
-      }
-       // input:focus{background-color:$l_img-bg; }
-       // input::-webkit-input-placeholder {line-height: $pH_fontSize; padding-top: $pHolder_pad;}
-       // input:-moz-placeholder {line-height: $pH_fontSize;padding-top: $pHolder_pad;}
-       // input:-ms-input-placeholder {line-height: $pH_fontSize;padding-top: $pHolder_pad;}
-      #sendBtn{
-        margin:5px 0 10px 0;
-        width:$emailW;
+      #emailAdd label{
+        display:block;
+        border:1px solid $formBorder;
+        border-style: solid;
+        font: $emailFontSize $h2_fontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
+        color: $inputColor;
+        width:$h1_width;
         height:$emailH;
+      }
+      #field_buttons{
+        padding-left: 5%;
+        margin: 0 auto;
+        width: $h1_width;
+      }
+      #sendBtn{
+        width:$emailW;
+        height: 50px;//$emailH;
         background-color: $black;
         color:$white;
-        font:$buttonFontSize $buttonFontFam,Trebuchet MS,Arial,sans-serif;
+        font:$buttonFontSize $buttonFontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
         text-transform: uppercase;
         border: none;
       }
-      .getEmail #noThnx{
-        width:$emailW;
+      #getEmail{
         position: relative;
+        top: 0px;
+        right: 0px;
+        padding-left: 15%;
+        padding-top: 1%;
+      }
+      .getEmail #noThnx{
+        position: relative;
+        width:$emailW;
         text-align: right;
-        font: $h2_fontSize $h2_fontFam,Trebuchet MS,Arial,sans-serif;
-        top:0px;
+        font: $h2_fontSize $h2_fontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
+        bottom:0px;
         color:$formBorder;
         margin:0px auto;
       }
-      // .closeButton{ ///Just to look at
-      //     position:absolute;
-      //     width:30px;
-      //     height:30px;
-      //     border: none;
-      //     top: $uni_padd;
-      //     right:10px;
-      //     z-index:3;
-      //   }
         .noThnxButton{
-          top:0px;
           display: inline-block;
-          cursor:pointer;
+          //cursor:pointer;
           background: none;
           border: none;
-          padding: 0;
+          padding-top: 2%;
           outline: none;
         }
-
-      #socialLinks{
-        //background-color: $black;
+//----Pop Up ////////////////
+      .popWindow {
+        visibility: hidden;
         position: relative;
-        width:$emailW;
+        display: inline-block;
+        cursor: pointer;
+        }
+     .popWindow .popUpText{
+       position: absolute;
+       background-color:$popUp-bg;
+       color:$black;
+       border-radius: 20px;
+       height:80px;
+       width:150px;
+       left:-450px;
+       bottom:50px;
+       text-align: center;
+       font: 14px $h2_fontFam,sans-serif;
+       margin:0 auto;
+       z-index:4;
+     }
+//----Scroll Popup ////////////////
+      #scrollPopUp{
+        position: absolute;
+        background-color: $popUp-bg;
+        top: 5%;
+        left: 50%;
+        border-radius: 10px;
+        text-align: center;
+        font: 14px $h2_fontFam,sans-serif;
+        visibility: hidden;
+        opacity: .75;
+        height: 30px;
+        width: 100px;
+      }
+      #scrollText{
+        display: block;
+        position: relative;
+        padding-top: 5.5%;
+        //-webkit-padding-top: 10px;
+        //-moz-padding-top: 5px;
+      }
+//----Social Icons ////////////////
+      #socialLinks{
+        position: relative;
+        align: center;
+        width: 100%;//$emailW;
         height:40px;
         bottom:0px;
-        padding-top:100px;
+        padding-top:10%;
+        padding-left: 5%;
         margin: 0 auto;
+        -webkit-box-align:center;
+        -webkit-box-pack:center;
+        display:-webkit-box;
       }
-       #socialLinks img{
-        height:31px;
-        width:31px;
+      #socialLinks img{
+      height:40px;
+      width:40px;
+    }
+//----@media Responses ////////////////
+    @media screen and (max-width:1200px){
+      #whole{width:100%; height: 100%;}//auto;}
+      #content{width:100%; height: 100%;}//auto;}
+      #left-image{width:40%; height: 100%;}//auto;}
+      #right-frame{width:60%; height: 100%;}//auto;}
+      #textHandler{width:60%;}
+      #scrollPopUp{visibility: visible;}
+    }
+    @media screen and (max-width:1024px){
+      #whole{width:100%; height: 100%;}//auto;}
+      #content{width:100%; height: 100%;}//auto;}
+      #left-image{width:40%; height: 100%;}//auto;}
+      #right-frame{width:60%; height: 100%;}//auto;}
+      #textHandler{width:60%;}
+      #scrollPopUp{visibility: visible;}
+    }
+    @media screen and (max-width:768px){
+      #whole{width:100%; height: 100%;}//auto;}
+      #content{width:100%; height: 100%;}//auto;}
+      #left-image{width:40%; height: 100%;}//auto;}
+      #right-frame{width:60%; height: 100%;}//auto;}
+      #textHandler{width:60%;}
+      #scrollPopUp{visibility: visible;}
+    }
+    @media screen and (max-width:1200px){
+      #whole{width:100%; height: 100%;}//auto;}
+      #content{width:100%; height: 100%;}//auto;}
+      #left-image{width:40%; height: 100%;}//auto;}
+      #right-frame{width:60%; height: 100%;overflow-y: auto;}//auto;}
+      #textHandler{width:60%;}
+      #scrollPopUp{visibility: visible;}
+    }
+    @media screen and (max-width:640px){
+      #whole{width:100%; height: auto;}
+      #content{width:100%; height: auto;}
+      //.left{width:100%; height: auto;}
+      //.right{width:100%; height: auto;}
+      #left-image{width:40%; height: auto;}
+      #right-frame{width:60%; height: auto;overflow-y: auto;}
+      //#right-form h1{width:60%;}
+      //#right-form h2{width:60%;}
+      #textHandler{width:60%;
+        h1{
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -ms-word-break: break-all;
+        /* This is the dangerous one in WebKit, as it breaks things wherever */
+        word-break: break-all;
+        /* Instead use this non-standard one: */
+        word-break: break-word;
+
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+        }
+      #scrollPopUp{visibility: visible;}
+      }
+      #crop{width:auto;}
+      }
+      @media screen and (max-width:570px){
+        #whole{width:100%; height: 100%;}//auto;}
+        #content{width:100%; height: 100%;}//auto;}
+        #left-image{width:40%; height: 100%;}//auto;}
+        #right-frame{width:60%; height: 100%;overflow-y: auto;}//auto;}
+        #textHandler{width:60%;
+          h1{
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          -ms-word-break: break-all;
+          /* This is the dangerous one in WebKit, as it breaks things wherever */
+          word-break: break-all;
+          /* Instead use this non-standard one: */
+          word-break: break-word;
+
+          -webkit-hyphens: auto;
+          -ms-hyphens: auto;
+          -moz-hyphens: auto;
+          hyphens: auto;
+          }
+        }
+        #scrollPopUp{visibility: visible;}
+      }
+    @media screen and (max-width:400px){
+      #whole{width:100%; height: 100%;}//auto;}
+      #content{width:100%; height: 100%;}//auto;}
+      #left-image{width:40%; height: 100%;}//auto;}
+      #right-frame{width:60%; height: 100%;overflow-y: auto;}//auto;}
+      #textHandler{width:60%;
+        h1{
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -ms-word-break: break-all;
+        /* This is the dangerous one in WebKit, as it breaks things wherever */
+        word-break: break-all;
+        /* Instead use this non-standard one: */
+        word-break: break-word;
+
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+        }
+      #scrollPopUp{visibility: visible;}
       }
     }
-    .show {visibility: visible;}
-    .dontShow {visibility: hidden;}

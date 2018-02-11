@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -16,34 +16,27 @@
           </div>
           <div class="right" id="right-frame">
             <div class="xBox">
-              <button onclick="windowClose()" class="closeButton">
-                <img src="img/X_icon.png" alt="Close">
-              </button>
+              <button onclick="windowClose()" class="closeButton"><img src="img/X_icon.png" alt="Close"></button>
             </div>
+            <form class="getEmail" id="getEmail">
               <div id="textHandler">
                 <h1>Get the worlds best travel Newsletter</h1>
                 <h2>Find out about new destinations, trips and deals first.</h2>
               </div>
-              <form class="getEmail" id="getEmail">
-              <div id="field_buttons">
-                <lable for="emailAdd">
-                  <input type="email" id="emailAdd" placeholder="Email"><br>
-                </lable>
-                <input type="submit" value="subscribe" id ="sendBtn">
-                <button onclick="windowClose()" class="noThnxButton" id="noThnx">no thanks</button>
-              </div>
+              <lable for="emailAdd">
+                <input type="email" id="emailAdd" placeholder="Email"><br>
+              </lable>
+              <input type="submit" value="subscribe" id ="sendBtn">
+              <button onclick="noThnxPop()" class="noThnxButton" id="noThnx">no thanks</button>
               <!-- <p id="noThnx">no thanks</p> -->
-              <div onclick="windowClose()" class='popWindow' id="popUp">
-                <span class="popUpText" id="laterPopUp">
-                  26! 26! 26! <br>And what! And what! <br>26!
-                </span>
+              <div onclick="closePop" class='popWindow' id="popUp">
+                <span class="popUpText" id="laterPopUp">26! 26! 26! <br>And what! And what! <br>26!</span>
               </div>
             </form>
-            <div id="scrollPopUp"><span id="scrollText">Scroll &#8597;</span></div>
             <div class="social" id="socialLinks">
-              <a href="http://www.facebook.com" target="_blank"><img src="img/Fb_icon.png" alt="FB"></a>
-              <a href="http://www.Instagram.com"target="_blank"><img src="img/Insta_icon.png" alt="IG"></a>
-              <a href="http://www.Twitter.com"target="_blank"><img src="img/Twit_icon.png" alt="TW"></a>
+              <img src="img/Fb_icon.png" alt="FB">
+              <img src="img/Insta_icon.png" alt="IG">
+              <img src="img/Twit_icon.png" alt="TW">
             </div>
           </div>
       </div>

@@ -1,0 +1,567 @@
+//@include normalize();
+$black: #000000;
+$white: #ffffff;
+$html-bg: #1c1a19;
+$content-bg: #fffefc;//#eaeae8;
+$popUp-bg: #c9c7c5;
+$l_img-bg: #fffcf7;
+$r_form-bg: #fffcf7;
+$formBorder: #c9c7c5;
+$inputColor: #757270;
+$contentH: 560px;
+$contentW: 920px;
+$r_formH: 540px;
+$r_formContentW: 500px;
+$l_imgH: 970px;
+// $l_imgW: 645px;
+$l_imgW: 380px;//$contentW * .45;
+$cropH: 540px;
+$r_contentH: 550px;
+$r_contentW: $contentW * .6;
+$h1_fontSize:35px;
+$h2_fontSize:20px;
+$pH_fontSize: 24px;
+$pHolder_pad: 10px;
+$emailFontSize: 22px;
+$h1_fontFam: "helvetica neue";
+$h2_fontFam: "helvetica"; //neue";
+$buttonFontFam: "helvetica neue";
+$buttonFontSize: 22px;
+$h1_width: 500px;//($contentW -40)px;
+$h2_width: 350px;
+$uni_padd: 10px;
+$emailW: 80%;
+$emailH: 60px;
+
+
+//
+// @mixin transform($scale:20px) {
+//   -webkit-transform:$scale;
+//   -moz-transform:$scale;
+//   -ms-transform:$scale;
+//   -o-transform:$scale;
+// }
+//.wrapper{
+body{background-color:$html-bg;}//background-image:url("img/newsletter.jpg");}
+.wrapper{
+  height:$contentH;
+  width:$contentW;
+  position: absolute;
+  margin: 0px auto;
+  background-color: $content-bg;
+  z-index:1;
+  }
+.closeButton{
+    position:absolute;
+    width:39px;
+    height:39px;
+    border: none;
+    top: 10px;
+    right:10px;
+    z-index:4;
+  }
+  .xBox img{
+    position: relative;//absolute;
+    width:40px;
+    height:40px;
+    top: 0px;//$uni_padd;
+    right: 10px;
+    z-index:2;
+    }
+ .popWindow {
+   visibility: hidden;
+   position: relative;
+   display: inline-block;
+   //z-index:4;
+   cursor: pointer;
+   }
+.popWindow .popUpText{
+  position: absolute;
+  background-color:$popUp-bg;
+  color:$black;
+  border-radius: 20px;
+  height:80px;
+  width:150px;
+  left:-450px;
+  bottom:50px;
+  text-align: center;
+  font: 14px $h2_fontFam,sans-serif;
+  margin:0 auto;
+  z-index:4;
+  //overflow: hidden;
+  }
+  #laterPopUp{padding-top: 25px;}
+  // .popWindow #laterPopUp{
+  //   margin:0 auto;
+  //   padding-top: 0px;
+  // }
+  // .popWindow .popuptext::after {
+  //     content: "";
+  //     position: absolute;
+  //     //top: 100%;
+  //     //left: 50%;
+  //     //margin-left: -5px;
+  //     //border-width: 5px;
+  //     border-style: solid;
+  //     border-color: #555 transparent transparent transparent;
+  // }
+ //.show {visibility: visible;}
+  // -webkit-animation: fadeIn 1s;
+  // animation: fadeIn 1s;
+  //}
+  // @-webkit-keyframes fadeIn{
+  //     from {opacity: 0;}
+  //     to {opacity: 1;}
+  // }
+  // @keyframes fadeIn{
+  //     from {opacity: 0;}
+  //     to {opacity:1 ;}
+  // }
+ //.dontShow {visibility: hidden;}
+   // -webkit-animation: fadeOut 1s;
+   // animation: fadeOut 1s;
+  // }
+  // @-webkit-keyframes fadeOut{
+  //     from {opacity: 1;}
+  //     to {opacity: 0;}
+  // }
+  // @keyframes fadeOut{
+  //     from {opacity: 1;}
+  //     to {opacity: 0;}
+  //}
+#content{
+  position: absolute;
+  top: 0px;
+  background-color: $content-bg;
+  height: $contentH;
+  width: $contentW;
+  margin: 0px auto;
+  overflow: hidden;
+  padding-bottom: 0px;
+  }
+  #left-frame {
+    background-color: $l_img-bg;
+    position: relative;
+    left: 0px;
+    height: $r_contentH -10px;
+    width: 400px;//$l_imgW;
+    padding-top: $uni_padd;
+    padding-left: $uni_padd;
+    padding-bottom: $uni_padd;
+    overflow: hidden;
+    }
+    .crop {
+      min-width: $l_imgW;
+      width: 100%;
+      //padding-bottom: 10px;
+      //height: $cropH;
+      //overflow: hidden;
+      max-height: 100%;
+    //  #crop{width: $l_imgW;};
+      img{
+        max-width: 100%;
+        max-height: 100%;
+        //width: 358px;//358px;//auto;
+        //height: auto;//$cropH;
+        //2878 × 1800
+      }
+    }
+    //#imgPos{margin: -235px 0 0 -375px;}
+    #right-frame{
+      position: absolute;
+      top:0px;
+      right:0px;
+      background-color: $r_form-bg;
+      height: $r_formH ;
+      //width: $r_contentW;
+      max-width: 100%;
+      text-align: center;
+      //padding: $uni_padd;
+      overflow: hidden;
+      margin: 0 auto;
+      h1{
+        position: relative;
+        font-style: bold;
+        font: $h1_fontSize $h1_fontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
+        text-transform: uppercase;
+        width:$h1_width;
+        margin:0px auto;
+        padding-top: 60px;
+        font-weight: bold;
+      }
+      h2{
+        padding-top: 10px;
+        position: relative;
+        font: $h2_fontSize $h2_fontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
+        font-style: normal;
+        letter-spacing: .5px;
+        line-height: 1.6;
+        width:$h2_width;
+        margin:0px auto;
+      }
+      .getEmail {padding-top: 40px;}
+      #emailAdd label{
+        width: 100%;
+        //height: 20%;
+        display:block;
+      }
+      #textHandler{poisition: relative; width: $r_formContentW;margin: 0 auto; }
+      #emailAdd{
+        border:1px solid $formBorder;
+        border-style: solid;
+        font: $emailFontSize $h2_fontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
+        color: $inputColor;
+        width:$emailW;
+        height:$emailH;
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+      ::placeholder {
+        //line-height: 30px;
+        color:$formBorder;
+        font: $pH_fontSize $h2_fontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
+        font-stlye: normal;
+        //padding-top: $pHolder_pad;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: left;
+        font-style: normal;
+      }
+      ::placeholder-shown{line-height: 30px;padding-left:10px;padding-top: $pHolder_pad;}//$pHolder_pad;}
+       // input:focus{background-color:$l_img-bg; }
+       // input::-webkit-input-placeholder {line-height: $pH_fontSize; padding-top: $pHolder_pad;}
+       //input::-moz-placeholder {line-height: $pH_fontSize;padding-top: $pHolder_pad;}
+       // input:-ms-input-placeholder {line-height: $pH_fontSize;padding-top: $pHolder_pad;}
+      #sendBtn{
+        margin:5px 0 10px 0;
+        width:$emailW;
+        height: 50px;//$emailH;
+        background-color: $black;
+        color:$white;
+        font:$buttonFontSize $buttonFontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
+        text-transform: uppercase;
+        border: none;
+      }
+      .getEmail #noThnx{
+        width:$emailW;
+        position: relative;
+        text-align: right;
+        font: $h2_fontSize $h2_fontFam, sans-serif;//,Trebuchet MS,Arial,sans-serif;
+        top:0px;
+        color:$formBorder;
+        margin:0px auto;
+      }
+      // .closeButton{ ///Just to look at
+      //     position:absolute;
+      //     width:30px;
+      //     height:30px;
+      //     border: none;
+      //     top: $uni_padd;
+      //     right:10px;
+      //     z-index:3;
+      //   }
+        .noThnxButton{
+          top:0px;
+          display: inline-block;
+          cursor:pointer;
+          background: none;
+          border: none;
+          padding: 0;
+          outline: none;
+        }
+        #socialLinks{
+          //background-color: $black;
+          position:relative;
+          width:$emailW;
+          height:40px;
+          bottom:0px;
+          padding-top:50px;
+          margin: 0 auto;
+        }
+       #socialLinks img{
+        height:40px;
+        width:40px;
+      }
+    }
+    .show {visibility: visible; -moz-visibility: visible;}
+    .bgChange{background-color: $formBorder}
+    .dontShow {visibility: hidden; -moz-visibility:hidden;}
+
+    @media screen and (max-width:919px){
+      #whole{width:100%; height: auto;}
+      #content{width:100%; height: auto;}
+      .left{width:100%; height:100%;}
+      .right{width:100%; height:100%;}
+      #left-image{width:40%; height: auto;}
+      #right-form{width:60%; height: auto;}
+      #textHandler{width:60%;}
+      #right-form h1{width:60%;}
+      #right-form h2{width:60%;}
+      #crop{width:auto;}
+      }
+    @media screen and (max-width:640px){
+      #whole{width:100%; height: auto;}
+      #content{width:100%; height: auto;}
+      .left{width:100%; height:100%;}
+      .right{width:100%; height:100%;}
+      #left-image{width:40%; height: auto;}
+      #right-form{width:60%; height: auto;}
+      #right-form h1{width:60%;}
+      #right-form h2{width:60%;}
+      #textHandler{width:60%;}
+      #crop{width:auto;}
+      }
+    @media screen and (max-width:320px){
+      #whole{width:320px; height: auto;}
+      .left{width:100%; height:100%;}
+      .right{width:100%; height:100%;}
+      #crop{width:auto;}
+      }
+    /* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+// @media only screen
+//   and (min-device-width: 320px)
+//   and (max-device-width: 480px)
+//   and (-webkit-min-device-pixel-ratio: 2) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+//
+// }
+//
+// /* Portrait */
+// @media only screen
+//   and (min-device-width: 320px)
+//   and (max-device-width: 480px)
+//   and (-webkit-min-device-pixel-ratio: 2)
+//   and (orientation: portrait) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+//
+//
+// }
+//
+// /* Landscape */
+// @media only screen
+//   and (min-device-width: 320px)
+//   and (max-device-width: 480px)
+//   and (-webkit-min-device-pixel-ratio: 2)
+//   and (orientation: landscape) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
+//
+// /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+//
+// /* Portrait and Landscape */
+// @media only screen
+//   and (min-device-width: 320px)
+//   and (max-device-width: 568px)
+//   and (-webkit-min-device-pixel-ratio: 2) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
+//
+// /* Portrait */
+// @media only screen
+//   and (min-device-width: 320px)
+//   and (max-device-width: 568px)
+//   and (-webkit-min-device-pixel-ratio: 2)
+//   and (orientation: portrait) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
+//
+// /* Landscape */
+// @media only screen
+//   and (min-device-width: 320px)
+//   and (max-device-width: 568px)
+//   and (-webkit-min-device-pixel-ratio: 2)
+//   and (orientation: landscape) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
+//
+// /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+//
+// /* Portrait and Landscape */
+// @media only screen
+//   and (min-device-width: 375px)
+//   and (max-device-width: 667px)
+//   and (-webkit-min-device-pixel-ratio: 2) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
+//
+// /* Portrait */
+// @media only screen
+//   and (min-device-width: 375px)
+//   and (max-device-width: 667px)
+//   and (-webkit-min-device-pixel-ratio: 2)
+//   and (orientation: portrait) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
+//
+// /* Landscape */
+// @media only screen
+//   and (min-device-width: 375px)
+//   and (max-device-width: 667px)
+//   and (-webkit-min-device-pixel-ratio: 2)
+//   and (orientation: landscape) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
+//
+// /* ----------- iPhone 6+, 7+ and 8+ ----------- */
+//
+// /* Portrait and Landscape */
+// @media only screen
+//   and (min-device-width: 414px)
+//   and (max-device-width: 736px)
+//   and (-webkit-min-device-pixel-ratio: 3) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
+//
+// /* Portrait */
+// @media only screen
+//   and (min-device-width: 414px)
+//   and (max-device-width: 736px)
+//   and (-webkit-min-device-pixel-ratio: 3)
+//   and (orientation: portrait) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
+//
+// /* Landscape */
+// @media only screen
+//   and (min-device-width: 414px)
+//   and (max-device-width: 736px)
+//   and (-webkit-min-device-pixel-ratio: 3)
+//   and (orientation: landscape) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
+//
+// /* ----------- iPhone X ----------- */
+//
+// /* Portrait and Landscape */
+// @media only screen
+//   and (min-device-width: 375px)
+//   and (max-device-width: 812px)
+//   and (-webkit-min-device-pixel-ratio: 3) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
+//
+// /* Portrait */
+// @media only screen
+//   and (min-device-width: 375px)
+//   and (max-device-width: 812px)
+//   and (-webkit-min-device-pixel-ratio: 3)
+//   and (orientation: portrait) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
+//
+// /* Landscape */
+// @media only screen
+//   and (min-device-width: 375px)
+//   and (max-device-width: 812px)
+//   and (-webkit-min-device-pixel-ratio: 3)
+//   and (orientation: landscape) {
+//     // #whole{width:100%;}
+//     // #content{width:100%;}
+//     // #left-image{width:40%;}
+//     // #right-form{width:60%;}
+//     // #textHandler{width:60%;}
+//     // #right-form h1{width:60%;}
+//     // #right-form h2{width:60%;}
+//     // #crop{width:auto;}
+// }
